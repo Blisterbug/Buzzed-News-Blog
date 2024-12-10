@@ -4,7 +4,7 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 const MoreNewsCard = ({ queryParameter }) => {
   const API_Key = import.meta.env.VITE_API_KEY;
-  const base_URL = `https://newsapi.org/v2/everything?q=${queryParameter}&apiKey=${API_Key}`;
+  const base_URL = `https://gnews.io/api/v4/search?q=${queryParameter}&apikey=${API_Key}`;
 
   const [article, setArticle] = useState(null);
 
@@ -15,7 +15,7 @@ const MoreNewsCard = ({ queryParameter }) => {
       if (data.articles && data.articles.length > 0) {
         const validArticles = data.articles.filter(
           (article) =>
-            article.urlToImage &&
+            article.image &&
             article.title &&
             article.description &&
             article.publishedAt
@@ -59,7 +59,7 @@ const MoreNewsCard = ({ queryParameter }) => {
     >
       {/* Image on the left */}
       <img
-        src={article.urlToImage}
+        src={article.image}
         alt={article.title}
         className="h-full w-1/2 p-6 rounded-xl object-cover rounded-l-lg"
       />

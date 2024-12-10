@@ -4,7 +4,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const MobileStoryCard = ({ queryParameter }) => {
   const API_Key = import.meta.env.VITE_API_KEY;
-  const base_URL = `https://newsapi.org/v2/everything?q=${queryParameter}&apiKey=${API_Key}`;
+  const base_URL = `https://gnews.io/api/v4/search?q=${queryParameter}&apikey=${API_Key}`;
 
   const [article, setArticle] = useState(null);
 
@@ -14,7 +14,7 @@ const MobileStoryCard = ({ queryParameter }) => {
       const data = await response.json();
       if (data.articles && data.articles.length > 0) {
         const validArticles = data.articles.filter(article => 
-          article.urlToImage && article.title && article.description
+          article.image && article.title && article.description
         );
         if (validArticles.length > 0) {
           const randomIndex = Math.floor(Math.random() * validArticles.length);
@@ -64,7 +64,7 @@ const MobileStoryCard = ({ queryParameter }) => {
     >
       {/* Background Image */}
       <img
-        src={article.urlToImage || 'https://via.placeholder.com/304x180'}
+        src={article.image || 'https://via.placeholder.com/304x180'}
         alt="Article"
         className="absolute inset-0 w-full h-full object-cover"
       />

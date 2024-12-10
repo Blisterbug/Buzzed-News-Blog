@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRefresh } from '@fortawesome/free-solid-svg-icons';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const CenterCard = ({ queryParameter }) => {
   const API_Key = import.meta.env.VITE_API_KEY;
-  const base_URL = `https://newsapi.org/v2/everything?q=${queryParameter}&apiKey=${API_Key}`;
+  const base_URL = `https://gnews.io/api/v4/search?q=${queryParameter}&apikey=${API_Key}`;
 
   const [article, setArticle] = useState(null);
 
@@ -16,7 +13,7 @@ const CenterCard = ({ queryParameter }) => {
       if (data.articles && data.articles.length > 0) {
         // Filter articles to include only those with complete data
         const validArticles = data.articles.filter(article => 
-          article.urlToImage && article.title && article.description
+          article.image && article.title && article.description
         );
         if (validArticles.length > 0) {
           // Select a random valid article
@@ -66,7 +63,7 @@ const CenterCard = ({ queryParameter }) => {
     >
       <img
         className="w-full h-80 object-cover hover:scale-105 transition-all"
-        src={article.urlToImage || `https://via.placeholder.com/320x180`}
+        src={article.image || `https://via.placeholder.com/320x180`}
         alt="Blog Post"
       />
       <div className="p-4 flex flex-col justify-between h-[calc(625px-192px)]">

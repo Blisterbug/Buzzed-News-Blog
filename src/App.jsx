@@ -14,6 +14,7 @@ import Science from './categories/Science'
 import Politics from './categories/Politics'
 import Fashion from './categories/Fashion'
 import Weather from './categories/Weather'
+import ExampleCard from './cards/ExampleCard';
 
 
 function App () {
@@ -35,6 +36,8 @@ function App () {
             <Route path="/fashion" element={<Fashion />}/>
             <Route path="/weather" element={<Weather />}/>
         </Routes>         
+
+        
 </div>
   );
 };

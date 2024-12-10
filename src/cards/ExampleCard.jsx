@@ -3,9 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRefresh } from '@fortawesome/free-solid-svg-icons';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
-const Card = ({ queryParameter }) => {
-  const API_Key = import.meta.env.VITE_API_KEY;
+const ExampleCard = ({ queryParameter }) => {
+  const API_Key = "70889e2fa744b8b945e4bc435dc612fd"
   const base_URL = `https://gnews.io/api/v4/search?q=${queryParameter}&apikey=${API_Key}`;
+  
 
   const [article, setArticle] = useState(null);
 
@@ -13,6 +14,7 @@ const Card = ({ queryParameter }) => {
     try {
       const response = await fetch(base_URL);
       const data = await response.json();
+      console.log(data);
       if (data.articles && data.articles.length > 0) {
         // Filter out articles with missing essential data
         const validArticles = data.articles.filter(article => 
@@ -91,4 +93,4 @@ const Card = ({ queryParameter }) => {
   );
 };
 
-export default Card;
+export default ExampleCard;
