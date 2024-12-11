@@ -3,56 +3,56 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const MobileStoryCard = ({ queryParameter }) => {
-  const API_Key = import.meta.env.VITE_API_KEY;
-  const base_URL = `https://newsapi.org/v2/everything?q=${queryParameter}&apiKey=${API_Key}`;
+  // const API_Key = import.meta.env.VITE_API_KEY;
+  // const base_URL = `https://newsapi.org/v2/everything?q=${queryParameter}&apiKey=${API_Key}`;
 
-  const [article, setArticle] = useState(null);
+  // const [article, setArticle] = useState(null);
 
-  const fetchNews = async () => {
-    try {
-      const response = await fetch(base_URL);
-      const data = await response.json();
-      if (data.articles && data.articles.length > 0) {
-        const validArticles = data.articles.filter(article => 
-          article.urlToImage && article.title && article.description
-        );
-        if (validArticles.length > 0) {
-          const randomIndex = Math.floor(Math.random() * validArticles.length);
-          setArticle(validArticles[randomIndex]);
-        } else {
-          console.error('No articles with complete data found.');
-        }
-      }
-    } catch (error) {
-      console.error('Error fetching article:', error);
-    }
-  };
+  // const fetchNews = async () => {
+  //   try {
+  //     const response = await fetch(base_URL);
+  //     const data = await response.json();
+  //     if (data.articles && data.articles.length > 0) {
+  //       const validArticles = data.articles.filter(article => 
+  //         article.urlToImage && article.title && article.description
+  //       );
+  //       if (validArticles.length > 0) {
+  //         const randomIndex = Math.floor(Math.random() * validArticles.length);
+  //         setArticle(validArticles[randomIndex]);
+  //       } else {
+  //         console.error('No articles with complete data found.');
+  //       }
+  //     }
+  //   } catch (error) {
+  //     console.error('Error fetching article:', error);
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchNews();
-  }, [queryParameter]);
+  // useEffect(() => {
+  //   fetchNews();
+  // }, [queryParameter]);
 
-  if (!article) {
-    return (
-      <div
-        className="relative rounded-lg shadow-lg overflow-hidden"
-        style={{
-          width: '330px',
-          height: '370px',
-        }}
-      >
-        {/* Skeleton loader */}
-        <div className="h-48 bg-gray-300 rounded-t-2xl mb-4 animate-pulse"></div>
-        <div className="p-4 flex flex-col justify-between h-[calc(304px-192px)]">
-          <div>
-            <div className="h-4 bg-gray-300 rounded mb-2 animate-pulse"></div>
-            <div className="h-4 bg-gray-300 rounded mb-2 animate-pulse"></div>
-          </div>
+  // if (!article) {
+  //   return (
+  //     <div
+  //       className="relative rounded-lg shadow-lg overflow-hidden"
+  //       style={{
+  //         width: '330px',
+  //         height: '370px',
+  //       }}
+  //     >
+  //       {/* Skeleton loader */}
+  //       <div className="h-48 bg-gray-300 rounded-t-2xl mb-4 animate-pulse"></div>
+  //       <div className="p-4 flex flex-col justify-between h-[calc(304px-192px)]">
+  //         <div>
+  //           <div className="h-4 bg-gray-300 rounded mb-2 animate-pulse"></div>
+  //           <div className="h-4 bg-gray-300 rounded mb-2 animate-pulse"></div>
+  //         </div>
           
-        </div>
-      </div>
-    );
-  }
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div
