@@ -28,7 +28,7 @@ const About = () => {
         </div>
         <div className="mt-6 border-t pt-2">
           <p className="text-lg text-gray-600">
-            We extend our gratitude to <a href="https://newsapi.org/docs" className="text-blue-600 hover:underline" target="_blank" rel="noopener noreferrer">NewsAPI</a> for providing the essential API support that powers this project.
+            <span className='text-2xl font-bold'>Note from Developer: </span>This project supports dynamic fetching using any news API . Since the project is at developing stage i personally use News API for development purpose . Since News API doesn't support CORS enabled on all origins . "I was cornered to Hard Code the News Cards values". So if you need to fetch data dynamically from API . Clone our Github Repository, Run the project locally and in buzzed-news-blog/src/cards/ExampleCard . Please Refer the card for dynamic fetching . <span className='text-xl font-semibold'>Thank you for your Understanding</span>
           </p>
         </div>
       </div>

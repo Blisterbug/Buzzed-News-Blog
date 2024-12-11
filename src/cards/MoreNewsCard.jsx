@@ -4,7 +4,7 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 const MoreNewsCard = ({ queryParameter }) => {
   const API_Key = import.meta.env.VITE_API_KEY;
-  const base_URL = `https://gnews.io/api/v4/search?q=${queryParameter}&apikey=${API_Key}`;
+  const base_URL = `https://newsapi.org/v2/everything?q=${queryParameter}&apiKey=${API_Key}`;
 
   const [article, setArticle] = useState(null);
 
@@ -15,7 +15,7 @@ const MoreNewsCard = ({ queryParameter }) => {
       if (data.articles && data.articles.length > 0) {
         const validArticles = data.articles.filter(
           (article) =>
-            article.image &&
+            article.urlToImage &&
             article.title &&
             article.description &&
             article.publishedAt
@@ -59,7 +59,7 @@ const MoreNewsCard = ({ queryParameter }) => {
     >
       {/* Image on the left */}
       <img
-        src={article.image}
+        src="https://images.macrumors.com/t/gSfA9gdPJTtAYv_7hjK9YByevcM=/2500x/article-new/2024/07/Safari-Technology-Preview-Updated-Feature-1.jpg"
         alt={article.title}
         className="h-full w-1/2 p-6 rounded-xl object-cover rounded-l-lg"
       />
@@ -67,16 +67,16 @@ const MoreNewsCard = ({ queryParameter }) => {
       {/* Content on the right */}
       <div className="flex-1 px-4 py-2 flex flex-col justify-between">
         <p className="text-sm text-gray-500 uppercase font-medium">
-          {new Date(article.publishedAt).toLocaleDateString()}
+        2024-11-23
         </p>
         <h3 className="text-md font-semibold mt-1 line-clamp-5 leading-tight">
-          {article.title}
+        Apple Releases Safari Technology Preview 208 With Bug Fixes and Performance Improvements
         </h3>
       </div>
 
       {/* Action button */}
       <button
-        onClick={() => window.open(article.url, "_blank")}
+        onClick={() => window.open("https://www.macrumors.com/2024/11/21/apple-releases-safari-technology-preview-208", "_blank")}
         className="bg-gray-500 hover:bg-gray-700 text-white rounded-full p-3 ml-2 mr-6"
       >
         <FontAwesomeIcon icon={faChevronRight} />

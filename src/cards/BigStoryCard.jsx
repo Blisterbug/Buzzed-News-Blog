@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const BigStoryCard = ({ queryParameter }) => {
   const API_Key = import.meta.env.VITE_API_KEY;
-  const base_URL = `https://gnews.io/api/v4/search?q=${queryParameter}&apikey=${API_Key}`;
+  const base_URL = `https://newsapi.org/v2/everything?q=${queryParameter}&apiKey=${API_Key}`;
 
   const [article, setArticle] = useState(null);
 
@@ -12,7 +12,7 @@ const BigStoryCard = ({ queryParameter }) => {
       const data = await response.json();
       if (data.articles && data.articles.length > 0) {
         const validArticles = data.articles.filter(article => 
-          article.image && article.title && article.description
+          article.urlToImage && article.title && article.description
         );
         if (validArticles.length > 0) {
           const randomIndex = Math.floor(Math.random() * validArticles.length);
@@ -62,7 +62,7 @@ const BigStoryCard = ({ queryParameter }) => {
     >
       {/* Background Image */}
       <img
-        src={article.image || 'https://via.placeholder.com/1320x500'}
+        src="https://media.wired.com/photos/673f641cc8e4183a9d1d5376/191:100/w_1280,c_limit/WW25-Technology-MW-Carmen-Casado.jpg"
         alt="Article"
         className="absolute inset-0 w-full h-full object-cover !important hover:scale-105"
       />
@@ -73,16 +73,16 @@ const BigStoryCard = ({ queryParameter }) => {
       <div className="absolute inset-0 p-4 text-white flex flex-col justify-between">
         {/* Title */}
         <h3 className="text-3xl font-semibold mt-80 text-left">
-          {article.title.length > 80 ? article.title.slice(0, 80) + '...' : article.title}
+          The Beginning of the End of Big Tech
         </h3>
         
         {/* Date */}
-        <p className="absolute bottom-6 left-4 text-lg font-semibold ">{new Date(article.publishedAt).toLocaleDateString()}</p>
+        <p className="absolute bottom-6 left-4 text-lg font-semibold ">2024-11-26</p>
 
         {/* Buttons */}
         <div className="flex justify-end items-center mt-4">
           <button
-            onClick={() => window.open(article.url, '_blank')}
+            onClick={() => window.open("", '_blank')}
             className="px-4 py-2 bg-gray-800 text-white rounded-xl text-md hover:bg-gray-800 transition"
           >
             Read Story

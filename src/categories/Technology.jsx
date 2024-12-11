@@ -113,7 +113,7 @@ const Technology = () => {
             </div>
     
             <div className='grid justify-start p-4 font-semibold text-2xl'>
-              <h1>More From Chronicle Hub</h1>
+              <h1>More From Buzzed</h1>
             </div>
     
             <div className='grid justify-center gap-6 p-4'>

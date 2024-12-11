@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const CenterCard = ({ queryParameter }) => {
   const API_Key = import.meta.env.VITE_API_KEY;
-  const base_URL = `https://gnews.io/api/v4/search?q=${queryParameter}&apikey=${API_Key}`;
-
+  const base_URL = `https://newsapi.org/v2/everything?q=${queryParameter}&apiKey=${API_Key}`;
   const [article, setArticle] = useState(null);
 
   const fetchNews = async () => {
@@ -13,7 +12,7 @@ const CenterCard = ({ queryParameter }) => {
       if (data.articles && data.articles.length > 0) {
         // Filter articles to include only those with complete data
         const validArticles = data.articles.filter(article => 
-          article.image && article.title && article.description
+          article.urlToImage && article.title && article.description
         );
         if (validArticles.length > 0) {
           // Select a random valid article
@@ -63,16 +62,16 @@ const CenterCard = ({ queryParameter }) => {
     >
       <img
         className="w-full h-80 object-cover hover:scale-105 transition-all"
-        src={article.image || `https://via.placeholder.com/320x180`}
+        src="https://gizmodo.com/app/uploads/2024/11/samsung-frame-tv.jpg"
         alt="Blog Post"
       />
       <div className="p-4 flex flex-col justify-between h-[calc(625px-192px)]">
         <div>
-          <p className="text-gray-500 text-sm">{new Date(article.publishedAt).toLocaleDateString()}</p>
+          <p className="text-gray-500 text-sm">2024-11-29</p>
           <h3 className="text-xl font-bold mt-2 line-clamp-2">
-            {article.title.length > 60 ? article.title.slice(0, 60) + '...' : article.title}
+          Samsung’s Gone Wild: $1,300 Off on Frame TVs, Now at an All-Time Low Price
           </h3>
-          <p className="text-gray-600 mt-3 line-clamp-3">{article.description}</p>
+          <p className="text-gray-600 mt-3 line-clamp-3">If you're looking for a TV that combines advanced technology with art, Samsung's Frame TV is the perfect choice.</p>
           <div className="flex justify-between items-center">
           <button
             onClick={fetchNews}
@@ -82,7 +81,7 @@ const CenterCard = ({ queryParameter }) => {
 
           </button>
           <button
-            onClick={() => window.open(article.url, '_blank')}
+            onClick={() => window.open("https://gizmodo.com/samsungs-gone-wild-1300-off-on-frame-tvs-now-at-an-all-time-low-price-2000531725", '_blank')}
             className="px-4 py-2 mt-16 bg-green-500 text-white rounded-xl text-sm hover:bg-green-700 hover:text-white transition "
           >
             Read Story

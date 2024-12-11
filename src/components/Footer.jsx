@@ -37,7 +37,7 @@ const Footer = () => {
         
         {/* Left Side - Copyright */}
         <p className="text-center lg:text-left text-sm">
-          © 2035 by The Chronicles Hub. All rights reserved.
+          © 2035 by Buzzed. All rights reserved.
         </p>
         
         {/* Right Side - Social Icons */}

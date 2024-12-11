@@ -21,3 +21,7 @@ Technologies
 
 Frontend: HTML, CSS, Javascript, ReactJS
 News API Integration: Utilize APIs from news aggregators to fetch trending articles.
+
+# Note From Developer 
+
+This project supports dynamic fetching using any news API . Since the project is at developing stage i personally use News API for development purpose . Since News API doesn't support CORS enabled on all origins . "I was cornered to Hard Code the News Cards values". So if you need to fetch data dynamically from API . Clone our Github Repository, Run the project locally and in buzzed-news-blog/src/cards/ExampleCard . Please Refer the card for dynamic fetching. 

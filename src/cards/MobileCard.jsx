@@ -5,7 +5,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const MobileCard = ({ queryParameter }) => {
   const API_Key = import.meta.env.VITE_API_KEY;
-  const base_URL = `https://gnews.io/api/v4/search?q=${queryParameter}&apikey=${API_Key}`;
+  const base_URL = `https://newsapi.org/v2/everything?q=${queryParameter}&apiKey=${API_Key}`;
 
   const [article, setArticle] = useState(null);
 
@@ -16,7 +16,7 @@ const MobileCard = ({ queryParameter }) => {
       if (data.articles && data.articles.length > 0) {
         // Filter out articles with missing essential data
         const validArticles = data.articles.filter(article => 
-          article.image && article.title && article.description
+          article.urlToImage && article.title && article.description
         );
         if (validArticles.length > 0) {
           // Select a random valid article
@@ -62,14 +62,14 @@ const MobileCard = ({ queryParameter }) => {
     >
       <img
         className="w-full h-48 object-cover hover:scale-105 transition-all"
-        src={article.image || `https://via.placeholder.com/320x180`}
+        src="https://gizmodo.com/app/uploads/2024/11/MacBook-Pro-16-Gaming-1.jpg"
         alt="Blog Post"
       />
       <div className="p-4 flex flex-col justify-between h-[calc(420px-192px)]">
         <div>
-          <p className="text-gray-500 text-sm">{new Date(article.publishedAt).toLocaleDateString()}</p>
+          <p className="text-gray-500 text-sm">2024-11-15</p>
           <h3 className="text-lg font-semibold mt-2 line-clamp-2">
-            {article.title.length > 60 ? article.title.slice(0, 60) + '...' : article.title}
+          The M4 MacBook Pro Might Be Hiding a Significant Screen Upgrade
           </h3>
         </div>
         <div className="flex justify-between items-center">
@@ -80,7 +80,7 @@ const MobileCard = ({ queryParameter }) => {
             <FontAwesomeIcon icon={faRefresh} className="text-white" />
           </button>
           <button
-            onClick={() => window.open(article.url, '_blank')}
+            onClick={() => window.open("https://gizmodo.com/the-m4-macbook-pro-might-be-hiding-a-significant-screen-upgrade-2000524997", '_blank')}
             className="px-4 py-2 mb-14 bg-green-500 text-white rounded-3xl text-sm hover:bg-green-700 transition"
           >
             <FontAwesomeIcon icon={faChevronRight} className="text-white" />

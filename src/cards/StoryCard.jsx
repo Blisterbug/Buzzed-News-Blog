@@ -4,7 +4,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const StoryCard = ({ queryParameter }) => {
   const API_Key = import.meta.env.VITE_API_KEY;
-  const base_URL = `https://gnews.io/api/v4/search?q=${queryParameter}&apikey=${API_Key}`;
+  const base_URL = `https://newsapi.org/v2/everything?q=${queryParameter}&apiKey=${API_Key}`;
 
   const [article, setArticle] = useState(null);
 
@@ -14,7 +14,7 @@ const StoryCard = ({ queryParameter }) => {
       const data = await response.json();
       if (data.articles && data.articles.length > 0) {
         const validArticles = data.articles.filter(article => 
-          article.image && article.title && article.description
+          article.urlToImage && article.title && article.description
         );
         if (validArticles.length > 0) {
           const randomIndex = Math.floor(Math.random() * validArticles.length);
@@ -64,7 +64,7 @@ const StoryCard = ({ queryParameter }) => {
     >
       {/* Background Image */}
       <img
-        src={article.image || 'https://via.placeholder.com/304x180'}
+        src="https://i.insider.com/67508a8b7929f317fb4fee79?width=1200&format=jpeg"
         alt="Article"
         className="absolute inset-0 w-full h-full object-cover"
       />
@@ -75,16 +75,16 @@ const StoryCard = ({ queryParameter }) => {
       <div className="absolute inset-0 p-4 text-white flex flex-col justify-between">
         {/* Title */}
         <h3 className="text-xl font-bold mt-56 text-left">
-          {article.title.length > 40 ? article.title.slice(0, 40) + '...' : article.title}
+        Spotify Wrapped is always a mess for parents
         </h3>
         
         {/* Date */}
-        <p className="absolute bottom-6 left-4 text-sm">{new Date(article.publishedAt).toLocaleDateString()}</p>
+        <p className="absolute bottom-6 left-4 text-sm">2024-12-24</p>
 
         {/* Buttons */}
         <div className="flex justify-end items-center mt-4">
           <button
-            onClick={() => window.open(article.url, '_blank')}
+            onClick={() => window.open("https://www.businessinsider.com/spotify-wrapped-ai-podcast-weird-reviewed-2024-12", '_blank')}
             className="px-4 py-2 bg-slate-200 text-gray-600 rounded-3xl text-sm hover:bg-white  hover:text-black transition"
           >
             <FontAwesomeIcon icon={faChevronRight} />

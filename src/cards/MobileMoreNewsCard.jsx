@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 
 const MobileMoreNewsCard = ({ queryParameter }) => {
   const API_Key = import.meta.env.VITE_API_KEY;
-  const base_URL = `https://gnews.io/api/v4/search?q=${queryParameter}&apikey=${API_Key}`;
+  const base_URL = `https://newsapi.org/v2/everything?q=${queryParameter}&apiKey=${API_Key}`;
 
   const [article, setArticle] = useState(null);
 
@@ -14,7 +14,7 @@ const MobileMoreNewsCard = ({ queryParameter }) => {
       if (data.articles && data.articles.length > 0) {
         const validArticles = data.articles.filter(
           (article) =>
-            article.image &&
+            article.urlToImage &&
             article.title &&
             article.description &&
             article.publishedAt
@@ -60,7 +60,7 @@ const MobileMoreNewsCard = ({ queryParameter }) => {
     >
       {/* Image on the left */}
       <img
-        src={article.image}
+        src="https://ichef.bbci.co.uk/news/1024/branded_news/14ba/live/c0b792b0-9df1-11ef-9260-19e6a950e830.jpg"
         alt={article.title}
         className="h-full w-1/2 p-6 rounded-xl object-cover"
       />
@@ -68,10 +68,10 @@ const MobileMoreNewsCard = ({ queryParameter }) => {
       {/* Content on the right */}
       <div className="flex-1 px-4 py-2 flex flex-col justify-between">
         <p className="text-sm text-gray-500 uppercase font-medium">
-          {new Date(article.publishedAt).toLocaleDateString()}
+        2024-11-11
         </p>
         <h3 className="text-md font-semibold mt-1 line-clamp-5 leading-tight">
-          {article.title}
+        Energy smart meter issues creating north-south divide
         </h3>
       </div>
 

@@ -5,7 +5,7 @@ import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
 const ExampleCard = ({ queryParameter }) => {
   const API_Key = "70889e2fa744b8b945e4bc435dc612fd"
-  const base_URL = `https://gnews.io/api/v4/search?q=${queryParameter}&apikey=${API_Key}`;
+  const base_URL = `https://newsapi.org/v2/everything?q=${queryParameter}&apiKey=${API_Key}`;
   
 
   const [article, setArticle] = useState(null);
@@ -18,7 +18,7 @@ const ExampleCard = ({ queryParameter }) => {
       if (data.articles && data.articles.length > 0) {
         // Filter out articles with missing essential data
         const validArticles = data.articles.filter(article => 
-          article.image && article.title && article.description
+          article.urlToImage && article.title && article.description
         );
         if (validArticles.length > 0) {
           // Select a random valid article
@@ -64,7 +64,7 @@ const ExampleCard = ({ queryParameter }) => {
     >
       <img
         className="w-full h-48 object-cover hover:scale-105 transition-all"
-        src={article.image || `https://via.placeholder.com/320x180`}
+        src={article.urlToImage || `https://via.placeholder.com/320x180`}
         alt="Blog Post"
       />
       <div className="p-4 flex flex-col justify-between h-[calc(420px-192px)]">
