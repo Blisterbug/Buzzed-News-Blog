@@ -83,7 +83,7 @@ const Science = () => {
     </div>
 
 
-// Mobile Code Here 
+{/* // Mobile Code Here  */}
 
 
 <div className='block sm:hidden'>

@@ -84,7 +84,7 @@ const Fashion = () => {
     </div>
 
 
-// Mobile Code Here 
+{/* // Mobile Code Here  */}
 <div className='block sm:hidden'>
       <div >
     <div className='grid justify-start p-4 font-semibold text-2xl pt-28'>
