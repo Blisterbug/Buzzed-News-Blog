@@ -104,7 +104,7 @@ const Home = () => {
 
         {/* Mobile Code Here  */}
     <div className='block sm:hidden'>
-        <div className='grid justify-start p-4 font-semibold text-2xl pt-28'>
+        <div className='grid justify-start p-4 pl-10 font-semibold text-2xl pt-28'>
           <h1>Breaking News</h1>
         </div>
 
