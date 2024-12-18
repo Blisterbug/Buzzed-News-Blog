@@ -31,7 +31,7 @@ const SearchResult = () => {
             </div>
 
         {/* Center section*/}
-            <div className='grid grid-cols-1 gap-6 p-4 pt-4'>
+            <div className='grid grid-cols-1 gap-6 pt-4'>
                 <CenterCard queryParameter={searchTerm}/>
             </div>
 
@@ -57,7 +57,7 @@ const SearchResult = () => {
 
 
 <div>
-    // Mobile Code Here 
+    {/* // Mobile Code Here  */}
 
 <div className='block sm:hidden'>
     <div>
