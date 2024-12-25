@@ -1,4 +1,5 @@
 import React from 'react';
+import '../src/App.css'
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar'
 import Home from './components/Home'
@@ -17,28 +18,27 @@ import Weather from './categories/Weather'
 import ExampleCard from './cards/ExampleCard';
 
 
-function App () {
+function App() {
   return (
-<div className='bg-gray-100'>
-    <ScrollTop/>
-    <Navbar/>
-        <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path="/about" element={<About/>} />
-            <Route path="/searchResult" element={<SearchResult />} />
-            <Route path="/business" element={<Business/>} />
-            <Route path="/space" element={<Space />} />
-            <Route path="/technology" element={<Technology />} />
-            <Route path="/entertainment" element={<Entertainment />}/>
-            <Route path="/movies" element={<Movies />}/>
-            <Route path="/science" element={<Science />}/>
-            <Route path="/politics" element={<Politics />}/>
-            <Route path="/fashion" element={<Fashion />}/>
-            <Route path="/weather" element={<Weather />}/>
-        </Routes>         
+    <div className='bg-gray-100'>
+      <ScrollTop />
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/searchResult" element={<SearchResult />} />
+        <Route path="/business" element={<Business />} />
+        <Route path="/space" element={<Space />} />
+        <Route path="/technology" element={<Technology />} />
+        <Route path="/entertainment" element={<Entertainment />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/science" element={<Science />} />
+        <Route path="/politics" element={<Politics />} />
+        <Route path="/fashion" element={<Fashion />} />
+        <Route path="/weather" element={<Weather />} />
+      </Routes>
 
-        
-</div>
+    </div>
   );
 };
 

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRefresh } from '@fortawesome/free-solid-svg-icons';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const Card = ({ queryParameter }) => {
   // const API_Key = import.meta.env.VITE_API_KEY;
@@ -49,7 +50,7 @@ const Card = ({ queryParameter }) => {
   //           <div className="h-4 bg-gray-300 rounded mb-2 animate-pulse"></div>
   //           <div className="h-4 bg-gray-300 rounded mb-2 animate-pulse"></div>
   //         </div>
-          
+
   //       </div>
   //     </div>
   //   );
@@ -75,15 +76,19 @@ const Card = ({ queryParameter }) => {
         <div className="flex justify-between items-center">
           <button
             // onClick={fetchNews}
-            className="px-4 py-2 mb-9 bg-blue-500 text-white rounded-full text-sm hover:bg-blue-700 transition"
+            className="mb-9 "
           >
-            <FontAwesomeIcon icon={faRefresh} className="text-white" />
+            <div className="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-500 transition duration-300 cursor-pointer">
+              <FontAwesomeIcon icon={faRefresh} className="text-white" />
+            </div>
           </button>
           <button
             onClick={() => window.open("https://www.wired.com/story/this-laser-system-can-locate-landmines-with-high-accuracy", '_blank')}
-            className="px-4 py-2 mb-9 bg-green-500 text-white rounded-3xl text-sm hover:bg-green-700 transition"
+            className="mb-9 "
           >
-            <FontAwesomeIcon icon={faChevronRight} className="text-white" />
+            <div className="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-500 transition duration-300 cursor-pointer">
+              <FontAwesomeIcon icon={faPlus} size="lg" />
+            </div>
           </button>
         </div>
       </div>

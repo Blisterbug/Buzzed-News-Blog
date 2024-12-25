@@ -1,19 +1,19 @@
 import React, { useState } from 'react';
 import StoryCard from '../cards/StoryCard';
 
-const ViewMore = ({title}) => {
+const ViewMore = ({ title }) => {
   const [contentList, setContentList] = useState([
     ,
   ]);
 
   const loadMoreContent = () => {
     const newContent = (
-    <div className='grid grid-cols-4 gap-6 p-4 pt-6 '>
-        <StoryCard queryParameter='stories'/>
-        <StoryCard queryParameter='united states'/>
-        <StoryCard queryParameter='comedy'/>
-        <StoryCard queryParameter='war'/>
-    </div>
+      <div className='grid grid-cols-4 gap-6 p-4 pt-6 '>
+        <StoryCard queryParameter='stories' />
+        <StoryCard queryParameter='united states' />
+        <StoryCard queryParameter='comedy' />
+        <StoryCard queryParameter='war' />
+      </div>
     );
     setContentList((prevContent) => [...prevContent, newContent]);
   };

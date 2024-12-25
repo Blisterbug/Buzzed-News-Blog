@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRefresh } from '@fortawesome/free-solid-svg-icons';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const MobileCard = ({ queryParameter }) => {
   // const API_Key = import.meta.env.VITE_API_KEY;
@@ -49,7 +49,7 @@ const MobileCard = ({ queryParameter }) => {
   //           <div className="h-4 bg-gray-300 rounded mb-2 animate-pulse"></div>
   //           <div className="h-4 bg-gray-300 rounded mb-2 animate-pulse"></div>
   //         </div>
-          
+
   //       </div>
   //     </div>
   //   );
@@ -69,21 +69,25 @@ const MobileCard = ({ queryParameter }) => {
         <div>
           <p className="text-gray-500 text-sm">2024-11-15</p>
           <h3 className="text-lg font-semibold mt-2 line-clamp-2">
-          The M4 MacBook Pro Might Be Hiding a Significant Screen Upgrade
+            The M4 MacBook Pro Might Be Hiding a Significant Screen Upgrade
           </h3>
         </div>
         <div className="flex justify-between items-center">
           <button
             // onClick={fetchNews}
-            className="px-4 py-2 mb-14 bg-blue-500 text-white rounded-full text-sm hover:bg-blue-700 transition"
+            className="mb-14 "
           >
-            <FontAwesomeIcon icon={faRefresh} className="text-white" />
+            <div className="flex items-center justify-center w-10 h-10 bg-gray-700 text-white rounded-full hover:bg-gray-500 transition duration-300 cursor-pointer">
+              <FontAwesomeIcon icon={faRefresh} className="text-white" />
+            </div>
           </button>
           <button
             onClick={() => window.open("https://gizmodo.com/the-m4-macbook-pro-might-be-hiding-a-significant-screen-upgrade-2000524997", '_blank')}
-            className="px-4 py-2 mb-14 bg-green-500 text-white rounded-3xl text-sm hover:bg-green-700 transition"
+            className="mb-14"
           >
-            <FontAwesomeIcon icon={faChevronRight} className="text-white" />
+            <div className="flex items-center justify-center w-10 h-10 bg-gray-700 text-white rounded-full hover:bg-gray-500 transition duration-300 cursor-pointer">
+              <FontAwesomeIcon icon={faPlus} size="lg" />
+            </div>
           </button>
         </div>
       </div>

@@ -75,14 +75,14 @@ const CenterCard = ({ queryParameter }) => {
           <div className="flex justify-between items-center">
           <button
             // onClick={fetchNews}
-            className="px-4 py-2 mt-16 bg-blue-500 text-white rounded-xl text-sm hover:bg-blue-700 hover:text-white transition"
+            className="px-4 py-3 mt-16 bg-blue-500 text-white rounded-lg text-sm hover:bg-blue-700 hover:text-white transition"
           >
             Refresh
 
           </button>
           <button
             onClick={() => window.open("https://gizmodo.com/samsungs-gone-wild-1300-off-on-frame-tvs-now-at-an-all-time-low-price-2000531725", '_blank')}
-            className="px-4 py-2 mt-16 bg-green-500 text-white rounded-xl text-sm hover:bg-green-700 hover:text-white transition "
+            className="px-4 py-3 mt-16 bg-green-500 text-white rounded-lg text-sm hover:bg-green-700 hover:text-white transition "
           >
             Read Story
           </button>

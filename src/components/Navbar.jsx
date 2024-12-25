@@ -43,7 +43,7 @@ const Navbar = () => {
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Left Section: Logo and Title */}
         <div className="flex items-center space-x-3">
-          <img src={Logo} alt="Logo" className="w-12 h-12 rounded-full" />
+          {/* <img src={Logo} alt="Logo" className="w-12 h-12 rounded-full" /> */}
           <span className="text-4xl font-bold text-gray-800">
             <Link to="/" className='text-gray-700 hover:text-black'>Buzzed</Link>
           </span>

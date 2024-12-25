@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const MobileStoryCard = ({ queryParameter }) => {
   // const API_Key = import.meta.env.VITE_API_KEY;
@@ -85,9 +85,11 @@ const MobileStoryCard = ({ queryParameter }) => {
         <div className="flex justify-end items-center mt-4">
           <button
             onClick={() => window.open("https://www.bbc.com/news/articles/c5yr90lmjpno", '_blank')}
-            className="px-4 py-2 bg-slate-200 text-gray-600 rounded-3xl text-sm hover:bg-white  hover:text-black transition"
+            className=""
           >
-            <FontAwesomeIcon icon={faChevronRight} />
+            <div className="flex items-center justify-center w-12 h-12 bg-gray-700 text-white rounded-full hover:bg-gray-500 transition duration-300 cursor-pointer">
+            <FontAwesomeIcon icon={faPlus} size="lg"/>
+            </div>
           </button>
         </div>
       </div>

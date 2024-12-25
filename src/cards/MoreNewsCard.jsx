@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const MoreNewsCard = ({ queryParameter }) => {
   // const API_Key = import.meta.env.VITE_API_KEY;
@@ -54,7 +55,7 @@ const MoreNewsCard = ({ queryParameter }) => {
 
   return (
     <div
-      className="bg-gray-100 rounded-3xl shadow flex items-center border-none"
+      className="bg-gray-100 flex items-center border-none"
       style={{ width: "462px", height: "179px" }}
     >
       {/* Image on the left */}
@@ -77,9 +78,11 @@ const MoreNewsCard = ({ queryParameter }) => {
       {/* Action button */}
       <button
         onClick={() => window.open("https://www.macrumors.com/2024/11/21/apple-releases-safari-technology-preview-208", "_blank")}
-        className="bg-gray-500 hover:bg-gray-700 text-white rounded-full p-3 ml-2 mr-6"
+        className="ml-2 mr-6"
       >
-        <FontAwesomeIcon icon={faChevronRight} />
+        <div className="flex items-center justify-center w-10 h-10 bg-gray-700 text-white rounded-full hover:bg-gray-500 transition duration-300 cursor-pointer">
+            <FontAwesomeIcon icon={faPlus} size="lg"/>
+            </div>
       </button>
     </div>
   );

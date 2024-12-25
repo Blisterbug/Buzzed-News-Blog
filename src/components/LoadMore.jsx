@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Card from '../cards/Card';
 
 
-const LoadMore = ({title}) => {
+const LoadMore = ({ title }) => {
   const [contentList, setContentList] = useState([
     ,
   ]);
@@ -11,8 +11,8 @@ const LoadMore = ({title}) => {
     const newContent = (
       <div className="grid grid-cols-3 gap-4 p-8 pl-24" key={contentList.length}>
         <Card queryParameter={title} />
-        <Card queryParameter={title}/>
-        <Card queryParameter={title}/>
+        <Card queryParameter={title} />
+        <Card queryParameter={title} />
       </div>
     );
     setContentList((prevContent) => [...prevContent, newContent]);
