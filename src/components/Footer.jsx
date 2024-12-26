@@ -22,7 +22,7 @@ const Footer = () => {
           />
           <button
             aria-label="Subscribe to the newsletter"
-            className="mt-6 bg-blue-500 text-white px-12 py-3 rounded-lg hover:bg-blue-600 transition-all duration-200"
+            className="mt-6 bg-blue-500 text-white px-8 py-3 rounded-lg hover:bg-blue-600 transition-all duration-200"
           >
             Get Newsletter
           </button>
